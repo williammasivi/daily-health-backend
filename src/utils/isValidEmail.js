@@ -14,9 +14,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { PrismaClient, Role } from '@prisma/client';
 
-
-const client = new PrismaClient();
-export const role = Role;
-export default client;
+export default function isValidEmail(email) {
+   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+   return emailRegex.test(email);
+};
